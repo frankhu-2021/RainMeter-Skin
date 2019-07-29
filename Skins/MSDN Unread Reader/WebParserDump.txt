@@ -1,0 +1,340 @@
+﻿<?xml version="1.0" encoding="utf-8"?><rss xmlns:a10="http://www.w3.org/2005/Atom" version="2.0"><channel xml:base="https://social.msdn.microsoft.com/Forums/en-US/user/threads?user=Frank%20Hu%20MSFT&amp;outputAs=rss&amp;filter=unread"><title>Frank Hu MSFT's threads</title><description>Frank Hu MSFT</description><copyright>© 2009 Microsoft Corporation. All rights reserved.</copyright><lastBuildDate>Thu, 04 Jul 2019 21:21:07 Z</lastBuildDate><a10:id>d78dea5a-d7d1-4dba-ba4b-c68aac7db8d5</a10:id><item><guid isPermaLink="true">https://social.msdn.microsoft.com/Forums/en-US/bce037ea-8d88-4418-ba5a-8fdaa98020a9/getazroleassignment-exception-of-type-microsoftrestazurecloudexception-was-thrown?forum=WindowsAzureAD</guid><link>https://social.msdn.microsoft.com/Forums/en-US/bce037ea-8d88-4418-ba5a-8fdaa98020a9/getazroleassignment-exception-of-type-microsoftrestazurecloudexception-was-thrown?forum=WindowsAzureAD</link><a10:author><a10:name>Bartsp34ks</a10:name><a10:uri>https://social.msdn.microsoft.com:443/profile/bartsp34ks/?type=forum</a10:uri></a10:author><title>Get-AzRoleAssignment : Exception of type 'Microsoft.Rest.Azure.CloudException' was thrown.</title><description>&lt;p&gt;I am trying to use the cmdlet Get-AzRoleAssignment using a service principal as advised. But I am receiving an error when doing this: Exception of type 'Microsoft.Rest.Azure.CloudException' was thrown.&amp;nbsp;&lt;br/&gt;
+&lt;br/&gt;
+I tried to add API Graph permission but that did not help, maybe I am missing something but I can't find the requirments for this cmdlet.&lt;/p&gt;
+&lt;p&gt;I already added:&lt;img alt="" src="https://social.msdn.microsoft.com/Forums/getfile/1452705"&gt;&lt;br/&gt;
+Besides the API permissions the account is owner and is able to perform other cmdlets without error.&lt;br/&gt;
+&lt;br/&gt;
+Version:&lt;br/&gt;
+&lt;br/&gt;
+CommandType&amp;nbsp; &amp;nbsp; &amp;nbsp;Name&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;Version&amp;nbsp; &amp;nbsp; Source&lt;br/&gt;
+-----------&amp;nbsp; &amp;nbsp; &amp;nbsp;----&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;-------&amp;nbsp; &amp;nbsp; ------&lt;br/&gt;
+Cmdlet&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; Get-AzRoleAssignment&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;1.3.0&amp;nbsp; &amp;nbsp; &amp;nbsp; Az.Resources&lt;br/&gt;
+&lt;br/&gt;
+Bart Scheltinga | www.bartsp34ks.nl | MCSA&lt;br/&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;br/&gt;
+&lt;/p&gt;</description><pubDate>Fri, 21 Jun 2019 06:11:55 Z</pubDate><enclosure url="https://i1.social.s-msft.com/profile/u/avatar.jpg?displayname=bartsp34ks&amp;size=small" type="image/jpeg" length="1" /><a10:updated>2019-07-03T06:20:07Z</a10:updated></item><item><guid isPermaLink="true">https://social.msdn.microsoft.com/Forums/en-US/5392dd54-eb35-4387-ad3d-e70e427a2727/how-to-get-client-rolescope-from-token-obtained-via-the-client-grant-flow?forum=WindowsAzureAD</guid><link>https://social.msdn.microsoft.com/Forums/en-US/5392dd54-eb35-4387-ad3d-e70e427a2727/how-to-get-client-rolescope-from-token-obtained-via-the-client-grant-flow?forum=WindowsAzureAD</link><a10:author><a10:name>steffen.schumacher</a10:name><a10:uri>https://social.msdn.microsoft.com:443/profile/steffen.schumacher/?type=forum</a10:uri></a10:author><title>how to get client role/scope from token obtained via the client grant flow?</title><description>&lt;p&gt;Hi,&lt;/p&gt;
+&lt;p&gt;I have an application not using azure for user auth, so I need it to use the client grant flow described here:&lt;/p&gt;
+&lt;p&gt;https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-oauth2-client-creds-grant-flow&lt;/p&gt;
+&lt;p&gt;to access my web service which uses RBAC.&lt;/p&gt;
+&lt;p&gt;Given only an access token, I can't figure out how to know which role/scope(s) the client has been granted?&lt;/p&gt;
+&lt;p&gt;I basically get the access token:&lt;/p&gt;
+&lt;pre style="background-color:#2b2b2b; color:#a9b7c6; font-family:Menlo; font-size:9pt"&gt;&lt;p&gt;args = {&lt;span style="color:#6a8759"&gt;'grant_type'&lt;/span&gt;: &lt;span style="color:#6a8759"&gt;'client_credentials'&lt;/span&gt;&lt;span style="color:#cc7832"&gt;,&lt;br/&gt;&lt;/span&gt;&lt;span style="color:#cc7832"&gt;        &lt;/span&gt;&lt;span style="color:#6a8759"&gt;'client_id'&lt;/span&gt;: cl_cfg[&lt;span style="color:#6a8759"&gt;'client_id'&lt;/span&gt;]&lt;span style="color:#cc7832"&gt;,&lt;br/&gt;&lt;/span&gt;&lt;span style="color:#cc7832"&gt;        &lt;/span&gt;&lt;span style="color:#6a8759"&gt;'client_secret'&lt;/span&gt;: cl_cfg[&lt;span style="color:#6a8759"&gt;'client_secret'&lt;/span&gt;]&lt;span style="color:#cc7832"&gt;,&lt;br/&gt;&lt;/span&gt;&lt;span style="color:#cc7832"&gt;        &lt;/span&gt;&lt;span style="color:#6a8759"&gt;'tenant'&lt;/span&gt;: cl_cfg[&lt;span style="color:#6a8759"&gt;'tenant'&lt;/span&gt;]&lt;span style="color:#cc7832"&gt;,&lt;br/&gt;&lt;/span&gt;&lt;span style="color:#cc7832"&gt;        &lt;/span&gt;&lt;span style="color:#6a8759"&gt;'scope'&lt;/span&gt;: &lt;span style="color:#6a8759"&gt;'https://vestas.onmicrosoft.com/ae63c369-a6f4-448c-9a43-a2639f939351/.default'&lt;br/&gt;&lt;/span&gt;&lt;span style="color:#6a8759"&gt;        &lt;/span&gt;}&lt;br/&gt;url = &lt;span style="color:#6a8759"&gt;'{}{}'&lt;/span&gt;.format(cl_cfg[&lt;span style="color:#6a8759"&gt;'microsoft_base'&lt;/span&gt;]&lt;span style="color:#cc7832"&gt;, &lt;/span&gt;cl_cfg[&lt;span style="color:#6a8759"&gt;'token_endpoint'&lt;/span&gt;])&lt;br/&gt;res = requests.post(url&lt;span style="color:#cc7832"&gt;, &lt;/span&gt;&lt;span style="color:#aa4926"&gt;data&lt;/span&gt;=args)&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;/pre&gt;
+&lt;p&gt;but when I decode it, there is nothing in there which enables me to know how to treat that client?&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class="x_x_x_x_jwtHeader" style="color:#bb0000; font-family:monospace; font-size:15px; white-space:pre-wrap"&gt;{ &amp;quot;typ&amp;quot;: &amp;quot;JWT&amp;quot;, &amp;quot;alg&amp;quot;: &amp;quot;RS256&amp;quot;, &amp;quot;x5t&amp;quot;: &amp;quot;CtfQC8Le-8NsC7oC2zQkZpcrfOc&amp;quot;, &amp;quot;kid&amp;quot;:
+ &amp;quot;CtfQC8Le-8NsC7oC2zQkZpcrfOc&amp;quot; }&lt;/span&gt;&lt;span style="color:#333333; font-family:monospace; font-size:15px; white-space:pre-wrap"&gt;.&lt;/span&gt;&lt;span class="x_x_x_x_jwtClaims" style="color:#0000bb; font-family:monospace; font-size:15px; white-space:pre-wrap"&gt;{
+ &amp;quot;aud&amp;quot;: &amp;quot;https://vestas.onmicrosoft.com/ae63c369-a6f4-448c-9a43-a2639f939351&amp;quot;, &amp;quot;iss&amp;quot;: &amp;quot;https://sts.windows.net/c0701940-7b3f-4116-a59f-159078bc3c63/&amp;quot;, &amp;quot;iat&amp;quot;: 1562074606, &amp;quot;nbf&amp;quot;: 1562074606, &amp;quot;exp&amp;quot;:
+ 1562078506, &amp;quot;aio&amp;quot;: &amp;quot;42ZgYNjdVFYcGRJkpSfzfPFiPrsgAA==&amp;quot;, &amp;quot;appid&amp;quot;: &amp;quot;8e4230c1-7584-40de-966a-1d743cb10606&amp;quot;, &amp;quot;appidacr&amp;quot;: &amp;quot;1&amp;quot;, &amp;quot;idp&amp;quot;: &amp;quot;https://sts.windows.net/c0701940-7b3f-4116-a59f-159078bc3c63/&amp;quot;,
+ &amp;quot;oid&amp;quot;: &amp;quot;458eb654-113f-466c-a6ec-df823a314ab9&amp;quot;, &amp;quot;sub&amp;quot;: &amp;quot;458eb654-113f-466c-a6ec-df823a314ab9&amp;quot;, &amp;quot;tid&amp;quot;: &amp;quot;c0701940-7b3f-4116-a59f-159078bc3c63&amp;quot;, &amp;quot;uti&amp;quot;: &amp;quot;YiDB5bOH6UWvQy_QPHkZAA&amp;quot;, &amp;quot;ver&amp;quot;:
+ &amp;quot;1.0&amp;quot; }&lt;/span&gt;&lt;span style="color:#333333; font-family:monospace; font-size:15px; white-space:pre-wrap"&gt;.&lt;/span&gt;&lt;span class="x_x_x_x_jwtSignature" style="color:#009900; font-family:monospace; font-size:15px; white-space:pre-wrap"&gt;[Signature]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;Am I approaching this all wrong? for users I &lt;/p&gt;
+&lt;p&gt;use the openid flow, which gets me this info out of the box :(&lt;/p&gt;
+&lt;p&gt;So rather than: {application ID url}/.default,&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;I tried: {application ID url}/{desired scope}&lt;/p&gt;
+&lt;p&gt;But I only think the '.default' option works - token request fails at least..&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br/&gt;
+&lt;/p&gt;</description><pubDate>Tue, 02 Jul 2019 15:15:33 Z</pubDate><enclosure url="https://i1.social.s-msft.com/profile/u/avatar.jpg?displayname=steffen.schumacher&amp;size=small" type="image/jpeg" length="1" /><a10:updated>2019-07-03T06:16:57Z</a10:updated></item><item><guid isPermaLink="true">https://social.msdn.microsoft.com/Forums/en-US/7e937aea-d257-4ae4-9958-df46b2f479ef/azure-ad-b2c-custom-policy-how-to-set-email-id-in-sign-up-from-application?forum=WindowsAzureAD</guid><link>https://social.msdn.microsoft.com/Forums/en-US/7e937aea-d257-4ae4-9958-df46b2f479ef/azure-ad-b2c-custom-policy-how-to-set-email-id-in-sign-up-from-application?forum=WindowsAzureAD</link><a10:author><a10:name>Aparna_SQL</a10:name><a10:uri>https://social.msdn.microsoft.com:443/profile/aparna_sql/?type=forum</a10:uri></a10:author><title>Azure AD B2C Custom Policy - How to set email id in sign up from application</title><description>&lt;p&gt;We want to set the signup email from the calling application, (The email should come as input from calling app and email id field has to be prefilled.&lt;/p&gt;
+&lt;p&gt;Any sample custom policy example for the same?&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;</description><pubDate>Tue, 02 Jul 2019 16:51:40 Z</pubDate><enclosure url="https://i1.social.s-msft.com/profile/u/avatar.jpg?displayname=aparna_sql&amp;size=small" type="image/jpeg" length="1" /><a10:updated>2019-07-03T04:43:14Z</a10:updated></item><item><guid isPermaLink="true">https://social.msdn.microsoft.com/Forums/en-US/afdf53c0-e690-4333-9e7b-a21b491c2d49/how-to-generate-a-token-for-azure-ad-for-scim-authentication?forum=WindowsAzureAD</guid><link>https://social.msdn.microsoft.com/Forums/en-US/afdf53c0-e690-4333-9e7b-a21b491c2d49/how-to-generate-a-token-for-azure-ad-for-scim-authentication?forum=WindowsAzureAD</link><a10:author><a10:name>Faisal Naeem</a10:name><a10:uri>https://social.msdn.microsoft.com:443/profile/faisal%20naeem/?type=forum</a10:uri></a10:author><title>how to generate a token for Azure AD for scim Authentication. </title><description>&lt;p&gt;Hi,&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;This document&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fazure%2Factive-directory%2Fmanage-apps%2Fuse-scim-to-provision-users-and-groups&lt;/p&gt;
+&lt;p&gt;step 8 states :&amp;nbsp;&lt;span style="font-family:'Segoe UI',SegoeUI,'Segoe WP','Helvetica Neue',Helvetica,Tahoma,Arial,sans-serif; font-size:16px"&gt;If the SCIM endpoint requires an OAuth bearer token from an issuer other than Azure AD, then copy the required
+ OAuth bearer token into the optional&amp;nbsp;&lt;/span&gt;&lt;span style="font-weight:bolder; font-family:'Segoe UI',SegoeUI,'Segoe WP','Helvetica Neue',Helvetica,Tahoma,Arial,sans-serif; font-size:16px"&gt;Secret Token&lt;/span&gt;&lt;span style="font-family:'Segoe UI',SegoeUI,'Segoe WP','Helvetica Neue',Helvetica,Tahoma,Arial,sans-serif; font-size:16px"&gt;&amp;nbsp;field.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style="font-family:'Segoe UI',SegoeUI,'Segoe WP','Helvetica Neue',Helvetica,Tahoma,Arial,sans-serif; font-size:16px"&gt;I am using Azure AD as my identity provider, so I should not have to paste anything in it, but it doesnt let me proceed because the
+ field is required.&amp;nbsp;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style="font-family:'Segoe UI',SegoeUI,'Segoe WP','Helvetica Neue',Helvetica,Tahoma,Arial,sans-serif; font-size:16px"&gt;I cant find any information on how to generate the required oauth token for the directory as mentioned in step 8. Here is a url encoded
+ link to an image on onedrive. (Forum doesnt allow links or images for new accounts).&amp;nbsp;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;https%3A%2F%2F1drv.ms%2Fu%2Fs%21AgjZ1yvBvXt8kHWMKinpAF9Wi0mr%3Fe%3DWv0IXC&lt;/p&gt;
+&lt;p&gt;&lt;span style="font-family:'Segoe UI',SegoeUI,'Segoe WP','Helvetica Neue',Helvetica,Tahoma,Arial,sans-serif; font-size:16px"&gt;&lt;/span&gt;&lt;/p&gt;</description><pubDate>Tue, 02 Jul 2019 17:30:34 Z</pubDate><enclosure url="https://i1.social.s-msft.com/profile/u/avatar.jpg?displayname=faisal+naeem&amp;size=small" type="image/jpeg" length="1" /><a10:updated>2019-07-03T00:03:38Z</a10:updated></item><item><guid isPermaLink="true">https://social.msdn.microsoft.com/Forums/en-US/dbeeed63-8d3f-4c27-b416-431f9fe6c729/providing-directory-extension-optional-claims-and-returning-value-within-token?forum=WindowsAzureAD</guid><link>https://social.msdn.microsoft.com/Forums/en-US/dbeeed63-8d3f-4c27-b416-431f9fe6c729/providing-directory-extension-optional-claims-and-returning-value-within-token?forum=WindowsAzureAD</link><a10:author><a10:name>Jason Sargood</a10:name><a10:uri>https://social.msdn.microsoft.com:443/profile/jason%20sargood/?type=forum</a10:uri></a10:author><title>Providing directory extension optional claims and returning value within token</title><description>&lt;p&gt;I have a simple web forms app which uses standard windows integrated authentication. I need to migrate this to the Azure App Service and have enabled OWIN support to authenticate against Azure AD. This is all working however when I inspect the claims I am
+ not seeing the SAMAccountName.&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;I have looked at the following articles and found that I can extend AD connect with Directory Extensions and sync the users SAMAccountName to Azure AD. Again this is working OK and if I query the graph explorer I can see my attribute...&lt;/p&gt;
+&lt;p&gt;&lt;span style=""&gt;https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-optional-claims&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=""&gt;&amp;nbsp;&amp;quot;extension_3cb1857501cc42a79dfc94edbee4c244_sAMAccountName&amp;quot;: &amp;quot;valuemasked&amp;quot;,&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;I have added the following optional claims section within my manifest of my Azure AD App however when I launch my app in Visual Studio and inspect the claims returned I am not seeing the claim which shows me the attribute value.&lt;/p&gt;
+&lt;p&gt;&lt;span style=""&gt;foreach (System.Security.Claims.Claim claim in ClaimsPrincipal.Current.Claims)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;Can anyone advise what I am missing here?&lt;/p&gt;
+&lt;p&gt;Thanks&lt;/p&gt;
+&lt;p&gt;Manifest below&lt;/p&gt;
+&lt;div style="color:#000000; background-color:#fffffe; font-family:Consolas,'Courier New',monospace; font-weight:normal; font-size:14px; line-height:19px; white-space:pre"&gt;
+&lt;div&gt;&lt;span style="color:#a31515"&gt;&amp;quot;optionalClaims&amp;quot;&lt;/span&gt;&lt;span style="color:#000000"&gt;: {&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span style="color:#000000"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;/span&gt;&lt;span style="color:#a31515"&gt;&amp;quot;idToken&amp;quot;&lt;/span&gt;&lt;span style="color:#000000"&gt;: [&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span style="color:#000000"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; {&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span style="color:#000000"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;/span&gt;
+&lt;span style="color:#a31515"&gt;&amp;quot;name&amp;quot;&lt;/span&gt;&lt;span style="color:#000000"&gt;: &lt;/span&gt;
+&lt;span style="color:#0451a5"&gt;&amp;quot;extension_3cb1857501cc42a79dfc94edbee4c244_sAMAccountName&amp;quot;&lt;/span&gt;&lt;span style="color:#000000"&gt;,&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span style="color:#000000"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;/span&gt;
+&lt;span style="color:#a31515"&gt;&amp;quot;source&amp;quot;&lt;/span&gt;&lt;span style="color:#000000"&gt;:
+&lt;/span&gt;&lt;span style="color:#0451a5"&gt;null&lt;/span&gt;&lt;span style="color:#000000"&gt;,&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span style="color:#000000"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;/span&gt;
+&lt;span style="color:#a31515"&gt;&amp;quot;essential&amp;quot;&lt;/span&gt;&lt;span style="color:#000000"&gt;:
+&lt;/span&gt;&lt;span style="color:#0451a5"&gt;false&lt;/span&gt;&lt;span style="color:#000000"&gt;,&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span style="color:#000000"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;/span&gt;
+&lt;span style="color:#a31515"&gt;&amp;quot;additionalProperties&amp;quot;&lt;/span&gt;&lt;span style="color:#000000"&gt;: []&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span style="color:#000000"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; }&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span style="color:#000000"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp; ],&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span style="color:#000000"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;/span&gt;&lt;span style="color:#a31515"&gt;&amp;quot;accessToken&amp;quot;&lt;/span&gt;&lt;span style="color:#000000"&gt;: [&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span style="color:#000000"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; {&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span style="color:#000000"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;/span&gt;
+&lt;span style="color:#a31515"&gt;&amp;quot;name&amp;quot;&lt;/span&gt;&lt;span style="color:#000000"&gt;: &lt;/span&gt;
+&lt;span style="color:#0451a5"&gt;&amp;quot;extension_3cb1857501cc42a79dfc94edbee4c244_sAMAccountName&amp;quot;&lt;/span&gt;&lt;span style="color:#000000"&gt;,&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span style="color:#000000"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;/span&gt;
+&lt;span style="color:#a31515"&gt;&amp;quot;source&amp;quot;&lt;/span&gt;&lt;span style="color:#000000"&gt;:
+&lt;/span&gt;&lt;span style="color:#0451a5"&gt;null&lt;/span&gt;&lt;span style="color:#000000"&gt;,&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span style="color:#000000"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;/span&gt;
+&lt;span style="color:#a31515"&gt;&amp;quot;essential&amp;quot;&lt;/span&gt;&lt;span style="color:#000000"&gt;:
+&lt;/span&gt;&lt;span style="color:#0451a5"&gt;false&lt;/span&gt;&lt;span style="color:#000000"&gt;,&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span style="color:#000000"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;/span&gt;
+&lt;span style="color:#a31515"&gt;&amp;quot;additionalProperties&amp;quot;&lt;/span&gt;&lt;span style="color:#000000"&gt;: []&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span style="color:#000000"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; }&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span style="color:#000000"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp; ],&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span style="color:#000000"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;/span&gt;&lt;span style="color:#a31515"&gt;&amp;quot;saml2Token&amp;quot;&lt;/span&gt;&lt;span style="color:#000000"&gt;: [&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span style="color:#000000"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; {&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span style="color:#000000"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;/span&gt;
+&lt;span style="color:#a31515"&gt;&amp;quot;name&amp;quot;&lt;/span&gt;&lt;span style="color:#000000"&gt;: &lt;/span&gt;
+&lt;span style="color:#0451a5"&gt;&amp;quot;extension_3cb1857501cc42a79dfc94edbee4c244_sAMAccountName&amp;quot;&lt;/span&gt;&lt;span style="color:#000000"&gt;,&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span style="color:#000000"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;/span&gt;
+&lt;span style="color:#a31515"&gt;&amp;quot;source&amp;quot;&lt;/span&gt;&lt;span style="color:#000000"&gt;:
+&lt;/span&gt;&lt;span style="color:#0451a5"&gt;&amp;quot;user&amp;quot;&lt;/span&gt;&lt;span style="color:#000000"&gt;,&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span style="color:#000000"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;/span&gt;
+&lt;span style="color:#a31515"&gt;&amp;quot;essential&amp;quot;&lt;/span&gt;&lt;span style="color:#000000"&gt;:
+&lt;/span&gt;&lt;span style="color:#0451a5"&gt;false&lt;/span&gt;&lt;span style="color:#000000"&gt;,&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span style="color:#000000"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;/span&gt;
+&lt;span style="color:#a31515"&gt;&amp;quot;additionalProperties&amp;quot;&lt;/span&gt;&lt;span style="color:#000000"&gt;: []&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span style="color:#000000"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; }&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span style="color:#000000"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp; ]&lt;/span&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=""&gt;&lt;/span&gt;&lt;span style=""&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;</description><pubDate>Mon, 17 Jun 2019 20:03:39 Z</pubDate><enclosure url="https://i1.social.s-msft.com/profile/u/avatar.jpg?displayname=jason+sargood&amp;size=small" type="image/jpeg" length="1" /><a10:updated>2019-07-02T20:28:20Z</a10:updated></item><item><guid isPermaLink="true">https://social.msdn.microsoft.com/Forums/en-US/f63152b7-3bdf-400f-94b2-c87355ce8844/cannot-access-fhir-server-authentication-failed-error?forum=WindowsAzureAD</guid><link>https://social.msdn.microsoft.com/Forums/en-US/f63152b7-3bdf-400f-94b2-c87355ce8844/cannot-access-fhir-server-authentication-failed-error?forum=WindowsAzureAD</link><a10:author><a10:name>mr lem</a10:name><a10:uri>https://social.msdn.microsoft.com:443/profile/mr%20lem/?type=forum</a10:uri></a10:author><title>Cannot access fhir server - authentication failed error</title><description>&lt;p&gt;I have been working on this for 3 days now but I can't seem to resolve it. I already followed the guides but still cannot able to access my fhir server. Though I was able to access it using postman&amp;nbsp;and it works fine. But I don't want a login pop since
+ my backend code (php) will be communicating the fhir server. So I followed the guide&amp;nbsp;but after I the token was generated&amp;nbsp;then tried to access the resource (&lt;span style="color:#505050; font-family:OpenSans,Helvetica,Arial,sans-serif; white-space:pre-wrap"&gt;https://this-is-test-blahblah.azurehealthcareapis.com/Patient&lt;/span&gt;).&lt;/p&gt;
+&lt;p&gt;I'm used to connecting with 3rd party api (just provided with token key), but im having trouble with azure's way of authenticating. Can you point me to the right direction?&lt;/p&gt;</description><pubDate>Tue, 02 Jul 2019 16:41:07 Z</pubDate><enclosure url="https://i1.social.s-msft.com/profile/u/avatar.jpg?displayname=mr+lem&amp;size=small" type="image/jpeg" length="1" /><a10:updated>2019-07-02T19:27:50Z</a10:updated></item><item><guid isPermaLink="true">https://social.msdn.microsoft.com/Forums/en-US/bb6b584b-2be0-4521-bf6d-994ee09d19bd/get-application-information-using-net-sdk?forum=WindowsAzureAD</guid><link>https://social.msdn.microsoft.com/Forums/en-US/bb6b584b-2be0-4521-bf6d-994ee09d19bd/get-application-information-using-net-sdk?forum=WindowsAzureAD</link><a10:author><a10:name>Ramandeep123</a10:name><a10:uri>https://social.msdn.microsoft.com:443/profile/ramandeep123/?type=forum</a10:uri></a10:author><title>Get Application Information using .Net SDK</title><description>&lt;p&gt;Hi,&lt;/p&gt;
+&lt;p&gt;I wrote PS script to get application information in console application but function is not invoking when it calls Invoke function.&lt;/p&gt;
+&lt;p&gt;Below is the code :&lt;/p&gt;
+&lt;pre class="prettyprint"&gt;using (PowerShell powershellInstance = PowerShell.Create())
+                {
+                    powershellInstance.AddScript(@&amp;quot;Import-Module AzureRM&amp;quot;);
+                    powershellInstance.AddScript(&amp;quot;Connect-AzureRmAccount&amp;quot;)
+                        .AddParameter(&amp;quot;-TenantId {GetSecretKeysFromAzureKeyVault(pipeline.datafactoryConfig.tenantId, pipeline.AzureKeyVault.url)}&amp;quot;);
+                    powershellInstance.AddScript(&amp;quot;Get-AzureRmADServicePrincipal&amp;quot;)
+                        .AddParameter($&amp;quot;-SearchString '{appName}'&amp;quot;);
+
+
+                    Collection&amp;lt;PSObject&amp;gt; pSObjects = powershellInstance.Invoke();
+
+                    var obj = pSObjects.FirstOrDefault();
+
+                    prop.ApplicationId = Convert.ToString(obj.Members.First(a =&amp;gt; a.Name == &amp;quot;ApplicationId&amp;quot;).Value);
+                    prop.DisplayName = Convert.ToString(obj.Members.First(a =&amp;gt; a.Name == &amp;quot;DisplayName&amp;quot;).Value);
+                    prop.ObjectId = Convert.ToString(obj.Members.First(a =&amp;gt; a.Name == &amp;quot;Id&amp;quot;).Value);
+                    
+                }&lt;/pre&gt;
+It does not call Invoke() function.&lt;br/&gt;
+&lt;p&gt;So, Is there any way to achieve this using .Net SDK&lt;/p&gt;
+&lt;p&gt;Please help me to fix this.&lt;/p&gt;
+&lt;p&gt;Thanks in advance&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;Ramandeep&lt;/p&gt;</description><pubDate>Mon, 01 Jul 2019 15:11:40 Z</pubDate><enclosure url="https://i1.social.s-msft.com/profile/u/avatar.jpg?displayname=ramandeep123&amp;size=small" type="image/jpeg" length="1" /><a10:updated>2019-07-02T20:26:13Z</a10:updated></item><item><guid isPermaLink="true">https://social.msdn.microsoft.com/Forums/en-US/4a5ca6a3-06e7-4692-a989-673bf04e1adf/azure-fhir-postman-oauth2-no-longer-works?forum=WindowsAzureAD</guid><link>https://social.msdn.microsoft.com/Forums/en-US/4a5ca6a3-06e7-4692-a989-673bf04e1adf/azure-fhir-postman-oauth2-no-longer-works?forum=WindowsAzureAD</link><a10:author><a10:name>dhu2018</a10:name><a10:uri>https://social.msdn.microsoft.com:443/profile/dhu2018/?type=forum</a10:uri></a10:author><title>Azure FHIR Postman oauth2 no longer works</title><description>&lt;p&gt;a few weeks ago, I register an Azure AD application, with the redirect_url as&amp;nbsp;https://www.getpostman.com/oauth2/callback, at that time, it work.&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;But now when I use my postman, I encounter the error&lt;/p&gt;
+OAuth2WindowManager~startLoginWith - Opening auth login window&amp;quot;,&amp;quot;https://login.microsoftonline.com/7f786e85-2b61-4bbe-a796-71e917221e38/oauth2/callback/oauth2/authorize?resource=https://azurehealthcareapis.com&amp;amp;response_type=code&amp;amp;state=1234&amp;amp;client_&lt;br/&gt;
+id=1848c8d5-1f8c-45ce-a210-29dd21200f0e&amp;amp;scope=patient%2F%24read&amp;amp;redirect_uri=https%3A%2F%2Fwww.getpostman.com%2Foauth2%2Fcallback&amp;quot;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&amp;quot;OAuth2WindowManager~startLoginWith - URL did not match the registered callbackURL, so skipping&amp;quot;&lt;/p&gt;
+&lt;p&gt;any suggestions?&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;working on APIM&lt;/p&gt;</description><pubDate>Wed, 22 May 2019 16:20:49 Z</pubDate><enclosure url="https://i1.social.s-msft.com/profile/u/avatar.jpg?displayname=dhu2018&amp;size=small" type="image/jpeg" length="1" /><a10:updated>2019-07-01T23:43:52Z</a10:updated></item><item><guid isPermaLink="true">https://social.msdn.microsoft.com/Forums/en-US/719f9a73-7f73-4726-a33e-1b8d11b7f81f/hybrid-azure-ad-joined-machine-showing-registered-pending?forum=WindowsAzureAD</guid><link>https://social.msdn.microsoft.com/Forums/en-US/719f9a73-7f73-4726-a33e-1b8d11b7f81f/hybrid-azure-ad-joined-machine-showing-registered-pending?forum=WindowsAzureAD</link><a10:author><a10:name>techophil</a10:name><a10:uri>https://social.msdn.microsoft.com:443/profile/techophil/?type=forum</a10:uri></a10:author><title>Hybrid Azure AD Joined machine showing registered pending</title><description>&lt;p&gt;In Azure Portal I can seem a few of our machined are registered pending. &lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;How can I get them registered?&lt;/li&gt;&lt;li&gt;Do I need to get them registered? What will happen, or not happen if they stay &amp;quot;pending&amp;quot;?&lt;/li&gt;&lt;/ol&gt;
+&lt;p&gt;I was looking into this because conditional access with MFA is not working properly with one of these &amp;quot;pending&amp;quot; machines. It is actually an RDS session host, so that may complicate it more. I do see a few standard workstations that are also in
+ &amp;quot;pending&amp;quot; registered state.&lt;/p&gt;
+&lt;p&gt;Thanks in advance&lt;/p&gt;
+&lt;p&gt;&lt;br/&gt;
+&lt;/p&gt;</description><pubDate>Sat, 15 Jun 2019 01:02:52 Z</pubDate><enclosure url="https://i1.social.s-msft.com/profile/u/avatar.jpg?displayname=techophil&amp;size=small" type="image/jpeg" length="1" /><a10:updated>2019-07-01T19:43:33Z</a10:updated></item><item><guid isPermaLink="true">https://social.msdn.microsoft.com/Forums/en-US/060d744b-356e-4495-8bb5-fb609e4e1e50/how-to-add-captcha-to-b2c-sign-up-policy?forum=WindowsAzureAD</guid><link>https://social.msdn.microsoft.com/Forums/en-US/060d744b-356e-4495-8bb5-fb609e4e1e50/how-to-add-captcha-to-b2c-sign-up-policy?forum=WindowsAzureAD</link><a10:author><a10:name>SaiKiran11211</a10:name><a10:uri>https://social.msdn.microsoft.com:443/profile/saikiran11211/?type=forum</a10:uri></a10:author><title>How to add CAPTCHA to B2C Sign up policy?</title><description>&lt;p&gt;Hi I have added Captcha V2 for sign in costume policy.&lt;/p&gt;
+&lt;p&gt;But i also wanted to add that to Sign up poilcy.&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;Can someone help me with any article or materiel to do this task.&lt;/p&gt;
+&lt;p&gt;&amp;#65279;&amp;#65279;&lt;span style="font-size:0.75em"&gt;Thanks&lt;/span&gt;&lt;br/&gt;
+&lt;/p&gt;
+&lt;p&gt;-Sai-&lt;/p&gt;</description><pubDate>Mon, 01 Jul 2019 19:09:25 Z</pubDate><enclosure url="https://i1.social.s-msft.com/profile/u/avatar.jpg?displayname=saikiran11211&amp;size=small" type="image/jpeg" length="1" /><a10:updated>2019-07-01T19:39:11Z</a10:updated></item><item><guid isPermaLink="true">https://social.msdn.microsoft.com/Forums/en-US/7a85ae77-cf14-4b13-99f1-00112aedfcf3/register-aad-ds-joined-windows-10-vm-in-aad-to-use-work-account?forum=WindowsAzureAD</guid><link>https://social.msdn.microsoft.com/Forums/en-US/7a85ae77-cf14-4b13-99f1-00112aedfcf3/register-aad-ds-joined-windows-10-vm-in-aad-to-use-work-account?forum=WindowsAzureAD</link><a10:author><a10:name>Tim45962</a10:name><a10:uri>https://social.msdn.microsoft.com:443/profile/tim45962/?type=forum</a10:uri></a10:author><title>register AAD DS joined Windows 10 VM in AAD to use Work Account</title><description>&lt;p&gt;Hi guys,&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;I've setup AAD DS and a Windows 10 VM on Azure. &lt;br/&gt;
+Sync is enabled for all Users and Groups.&lt;/p&gt;
+&lt;p&gt;The VM is Domain joined with AAD DS successfully and a GPO with &amp;quot;Register Domain joined Computers as devices&amp;quot; is enabled.&lt;br/&gt;
+But the VM does not register itself to the AAD so I don't have &amp;quot;Work Account&amp;quot; enabled.&lt;/p&gt;
+&lt;p&gt;However I can add an &amp;quot;Work Account&amp;quot; manually to use SSO etc.&lt;br/&gt;
+But how can I register Azure VM devices &lt;span style=""&gt;automatically in AAD when they&lt;/span&gt; are Domain joined to AAD DS?&lt;/p&gt;
+&lt;p&gt;I think in a traditional Hybrid scenario I would use AD Connect to create the required Service Connection Point but how to it do in AAD DS?&lt;/p&gt;
+&lt;p&gt;Thank you&lt;br/&gt;
+Tim&lt;/p&gt;</description><pubDate>Thu, 27 Jun 2019 14:01:08 Z</pubDate><enclosure url="https://i1.social.s-msft.com/profile/u/avatar.jpg?displayname=tim45962&amp;size=small" type="image/jpeg" length="1" /><a10:updated>2019-07-01T19:36:30Z</a10:updated></item><item><guid isPermaLink="true">https://social.msdn.microsoft.com/Forums/en-US/c5c25ec5-6f80-4f3c-9827-67f24dd727a6/ad-backup?forum=WindowsAzureAD</guid><link>https://social.msdn.microsoft.com/Forums/en-US/c5c25ec5-6f80-4f3c-9827-67f24dd727a6/ad-backup?forum=WindowsAzureAD</link><a10:author><a10:name>Bkfs</a10:name><a10:uri>https://social.msdn.microsoft.com:443/profile/bkfs/?type=forum</a10:uri></a10:author><title>AD Backup</title><description>&lt;p&gt;&lt;span lang="EN-US"&gt;Does Microsoft provide any guidance or best practices for backing up and restoring your AD database in an Active Directory hybrid environment with Azure AD Connect? we are trying to put together a disaster recovery plan for AD recovery.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span lang="EN-US"&gt;Any inputs\suggestions please.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span lang="EN-US"&gt;Thanks.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span lang="EN-US"&gt;&lt;/span&gt;&lt;/p&gt;</description><pubDate>Tue, 11 Jun 2019 18:59:25 Z</pubDate><enclosure url="https://i1.social.s-msft.com/profile/u/avatar.jpg?displayname=bkfs&amp;size=small" type="image/jpeg" length="1" /><a10:updated>2019-07-01T12:39:22Z</a10:updated></item><item><guid isPermaLink="true">https://social.msdn.microsoft.com/Forums/en-US/a75b8eab-addb-4bed-9d79-a215e5357d74/unable-to-encrypt-pdfjpg-byte-data-using-key-vault-encryptasync?forum=AzureKeyVault</guid><link>https://social.msdn.microsoft.com/Forums/en-US/a75b8eab-addb-4bed-9d79-a215e5357d74/unable-to-encrypt-pdfjpg-byte-data-using-key-vault-encryptasync?forum=AzureKeyVault</link><a10:author><a10:name>bharatmalhotra84</a10:name><a10:uri>https://social.msdn.microsoft.com:443/profile/bharatmalhotra84/?type=forum</a10:uri></a10:author><title>Unable to encrypt PDF/JPG byte data using Key vault 'EncryptAsync'</title><description>&lt;p&gt;Hi,&lt;/p&gt;
+&lt;p&gt;I;am using keyvault to encrypt byte data (Text &amp;amp; PDF/JPG) using below article. it works perfect for plain text (converted to byte[]) but throws error when sending byte[] from pdf/JPG. can you suggest what's missing?&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://docs.microsoft.com/en-us/previous-versions/azure/mt134054%28v%3dazure.100%29"&gt;https://docs.microsoft.com/en-us/previous-versions/azure/mt134054%28v%3dazure.100%29&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;here is the sample code.&lt;/p&gt;
+private async Task EncryptResponse(string fileName, byte[] data, int organisationId)&lt;br/&gt;
+&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; {&lt;br/&gt;
+&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; KeyVault.IKeyVault vault = new KeyVault.KeyVault();&lt;br/&gt;
+&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; string keyId = await vault.GetKeyAsync(organisationId.ToString());&lt;br/&gt;
+&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; var encrypted = await vault.EncryptAsync(keyId, Encoding.UTF8.GetBytes(fileName));&lt;br/&gt;
+&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; }
+&lt;p&gt;&lt;/p&gt;
+public async Task&amp;lt;byte[]&amp;gt; EncryptAsync(string keyId, byte[] dataToEncrypt)&lt;br/&gt;
+&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; {&lt;br/&gt;
+&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; var operationResult = await KeyVaultClient.EncryptAsync(keyId, JsonWebKeyEncryptionAlgorithm.RSAOAEP256, dataToEncrypt); //throws error here as exception 'bad parameter'&lt;br/&gt;
+&lt;br/&gt;
+&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; return operationResult.Result;&lt;br/&gt;
+&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; }
+&lt;p&gt;&lt;a href="https://docs.microsoft.com/en-us/previous-versions/azure/mt134054%28v%3dazure.100%29"&gt;&lt;/a&gt;&lt;/p&gt;</description><pubDate>Tue, 28 May 2019 20:06:33 Z</pubDate><enclosure url="https://i1.social.s-msft.com/profile/u/avatar.jpg?displayname=bharatmalhotra84&amp;size=small" type="image/jpeg" length="1" /><a10:updated>2019-06-28T22:42:32Z</a10:updated></item><item><guid isPermaLink="true">https://social.msdn.microsoft.com/Forums/en-US/25532990-9316-4541-b670-69bab270f746/creating-new-azure-account-when-part-of-larger-global-company?forum=WindowsAzureAD</guid><link>https://social.msdn.microsoft.com/Forums/en-US/25532990-9316-4541-b670-69bab270f746/creating-new-azure-account-when-part-of-larger-global-company?forum=WindowsAzureAD</link><a10:author><a10:name>Jon173023</a10:name><a10:uri>https://social.msdn.microsoft.com:443/profile/jon173023/?type=forum</a10:uri></a10:author><title>Creating new Azure account when part of larger global company?</title><description>&lt;p style="margin-bottom:0in; margin-bottom:.0001pt; line-height:normal"&gt;&lt;span style="font-size:12.0pt; font-family:'Times New Roman',serif"&gt;Apologies if this isn't in the exact right forum. I suppose this is an architecture question, but this is the closest
+ subforum I could find.&lt;/span&gt;&lt;/p&gt;
+&lt;p style="margin-bottom:0in; margin-bottom:.0001pt; line-height:normal"&gt;&lt;/p&gt;
+&lt;p style="margin-bottom:0in; margin-bottom:.0001pt; line-height:normal"&gt;&lt;span style="font-size:12.0pt; font-family:'Times New Roman',serif"&gt;I work for a small multinational software company, I'm based in the US, our HQ is in Australia. Our company-wide Azure/Office365/AD
+ account is administered through the HQ office. Our North American division (which I run) wants to have our own, independent Azure cloud for development, testing, etc.
+&lt;/span&gt;&lt;/p&gt;
+&lt;p style="margin-bottom:0in; margin-bottom:.0001pt; line-height:normal"&gt;&lt;span style="font-size:12.0pt; font-family:'Times New Roman',serif"&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;
+&lt;p style="margin-bottom:0in; margin-bottom:.0001pt; line-height:normal"&gt;&lt;span style="font-size:12.0pt; font-family:'Times New Roman',serif"&gt;I just created a new Azure trial account using my company email address, and it automatically synced with our global
+ AD and has populated my credentials directly off the AD. I don't have admin rights, etc. I'm just a regular user with access to the various projects I already have access to, but interestingly, I don't see any of our VMs, SQL DBs, etc. I can only see them
+ if log in to Dev Ops through our &amp;quot;&lt;em&gt;xxx.com.au&lt;/em&gt;&amp;quot; Australian domain. All the American staff have a &amp;quot;&lt;em&gt;xxx.com&lt;/em&gt;&amp;quot; American domain.
+&lt;/span&gt;&lt;/p&gt;
+&lt;p style="margin-bottom:0in; margin-bottom:.0001pt; line-height:normal"&gt;&lt;span style="font-size:12.0pt; font-family:'Times New Roman',serif"&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;
+&lt;p style="margin-bottom:0in; margin-bottom:.0001pt; line-height:normal"&gt;&lt;span style="font-size:12.0pt; font-family:'Times New Roman',serif"&gt;I need to be able to run this separate Azure environment as an admin, make other people admins, etc. This doesn't appear
+ to be currently possible because I am not set as an Admin within our global AD.&lt;/span&gt;&lt;/p&gt;
+&lt;p style="margin-bottom:0in; margin-bottom:.0001pt; line-height:normal"&gt;&lt;span style="font-size:12.0pt; font-family:'Times New Roman',serif"&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;
+&lt;p style="margin-bottom:0in; margin-bottom:.0001pt; line-height:normal"&gt;&lt;span style="font-size:12.0pt; font-family:'Times New Roman',serif"&gt;Can I conveniently/easily accomplish this by creating a new subsidiary &amp;quot;organization&amp;quot; within DevOps? Or am
+ I better off just creating a brand new Azure account with a non-company email for the time being? At some point down the road we will need to bring this new account &amp;quot;into the fold&amp;quot; when my azure engineers are off their current project and can devote
+ time to this, but I'm kinda flying solo on this one for the next month and running up against deadlines. Thanks so much for any thoughts/help you can provide!&lt;/span&gt;&lt;/p&gt;
+&lt;p style="margin-bottom:0in; margin-bottom:.0001pt; line-height:normal"&gt;&lt;span style="font-size:12.0pt; font-family:'Times New Roman',serif"&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;
+&lt;br/&gt;</description><pubDate>Thu, 20 Jun 2019 15:18:41 Z</pubDate><enclosure url="https://i1.social.s-msft.com/profile/u/avatar.jpg?displayname=jon173023&amp;size=small" type="image/jpeg" length="1" /><a10:updated>2019-06-28T22:32:41Z</a10:updated></item><item><guid isPermaLink="true">https://social.msdn.microsoft.com/Forums/en-US/c58e6545-990f-4fc1-9979-af41f84bfa72/azure-ad-conditional-access?forum=WindowsAzureAD</guid><link>https://social.msdn.microsoft.com/Forums/en-US/c58e6545-990f-4fc1-9979-af41f84bfa72/azure-ad-conditional-access?forum=WindowsAzureAD</link><a10:author><a10:name>Aron Baker</a10:name><a10:uri>https://social.msdn.microsoft.com:443/profile/aron%20baker/?type=forum</a10:uri></a10:author><title>Azure AD Conditional Access</title><description>&lt;p&gt;&lt;span style="color:#38444d; font-size:14px; white-space:pre-wrap"&gt;Hi. &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style="color:#38444d; font-size:14px; white-space:pre-wrap"&gt;I have 2 questions about conditional access in Azure AD, &amp;amp; the baseline polices - in particular the End User Protection (Preview) policy.
+&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style="color:#38444d; font-size:14px; white-space:pre-wrap"&gt;1) What are the settings defined?
+&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style="color:#38444d; font-size:14px; white-space:pre-wrap"&gt;2) I've added two users to test, but still showing as All users (so don't want to switch it on just yet in case it does affect all users).&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style="color:#38444d; font-size:14px; white-space:pre-wrap"&gt;I realise it's still in preview, but wanted to ensure the settings are as we need them (or at least use them as a baseline for our own policy.&lt;/span&gt;&lt;/p&gt;</description><pubDate>Tue, 25 Jun 2019 10:59:03 Z</pubDate><enclosure url="https://i1.social.s-msft.com/profile/u/avatar.jpg?displayname=aron+baker&amp;size=small" type="image/jpeg" length="1" /><a10:updated>2019-06-28T22:29:11Z</a10:updated></item><item><guid isPermaLink="true">https://social.msdn.microsoft.com/Forums/en-US/0954bdd1-1282-4a32-92c6-065b2b55a92c/this-passwordreset-microsoftonline-com-page-cant-be-found?forum=WindowsAzureAD</guid><link>https://social.msdn.microsoft.com/Forums/en-US/0954bdd1-1282-4a32-92c6-065b2b55a92c/this-passwordreset-microsoftonline-com-page-cant-be-found?forum=WindowsAzureAD</link><a10:author><a10:name>İbrahim ULUDAĞ</a10:name><a10:uri>https://social.msdn.microsoft.com:443/profile/%C4%B0brahim%20uluda%C4%9F/?type=forum</a10:uri></a10:author><title>This passwordreset . microsoftonline . com page can’t be found</title><description>I integrated Identity Server 4 with Azure Active Directory. It works fine. However, when I follow the below flow, I get not found page for password recovery.&lt;br/&gt;
+&lt;br/&gt;
+Goto Identity Server&lt;br/&gt;
+Click to Login with Azure AD button =&amp;gt; Redirects to login page of microsoft&lt;br/&gt;
+Enter user name =&amp;gt; Redirects to enter password page&lt;br/&gt;
+In the Enter password page click on Forgot my password button. I get not found error&lt;br/&gt;
+The url of the page is : https://passwordreset.microsoftonline.com/? ru=https%3a%2f%2flogin.microsoftonline.com%2f3b6647ee-a17a-45ff-ac15-6c9fb73006f2%2freprocess%3fctx%3drQIIAc1WO6skCRWeO3dmdmZwcV1WMRxxAnGpe-v9GBCtV1fX-9ndVZ0U9e56V1dV33pEIgZGKkaL4YYbGumCIAgGi-AmGhgaiSA-QNDMHn-FyYHDOZzgfOc73_fyHewOuQPvwG_ewnfgm9cEgSRECpJAjIckgJJBDJAkAQJJHCNolCAYAqL9-y_f-yhfjX989K_td6dfwb_-218__uTm-zenceyGN_f3eZw0Yz4ud2MyjHdpnw9DVLWX-C5q6_soqKowiMr7No-j-yHPGiBv7gksiJIAJQAKjmEATYkUIKkkAlA8jJMEpCIQRO6JNMAgHAwBlAIRAI3DBAhwBAcwlCITJIkJisB-fnPz-c3Nn29uPnk8XGsUAeI4gUMojIM4Qtyp6ynXit2kCeKoOzSq2SCoOeWsONmiFtHo1SriwfvaW3eQV1iFWmTQUZDe5uPR4VFvufYLKqIcxFk9mKN-8JDjwVs9J8OO9f70x8df1OnLeILfhrbP1-Sfj1-kbV_7XTuMP739zbtsykmk5homji2Q1Rm9BhYDwOLKRvGRLRHr8qkg2BTHTxugFutkVgU_sYPjegwRZntBwXqzWaKz4Ue5aIiopcyZp_LgMcAPoL0LBpZww3yDNEZhBW6XFzSZSUMg2DQo7oqCAxBxYA6m5I8jRzUWzkdmtIKee94Mvcd6xfKAmxkpRaLEnb2g9UFlG2esoAVumm1DhDU3UuZQ29JeY58bYTpcH7KepI2jxFiNOIq8dRDrrqZzE1GWiwjDG5KJOYXZZVDDe-HYyxRvMg3ollgjcKRMgDYoRZ0Hhsv-UFgg7Eb65B19iICs2SLji1-7YvngGwhshj7ZuwLSZ_waV469s9OwKmO0r4VS76wAqBpibh6ACA_buAkkQKTZdIcw1MlwBUAbQIeK7U088TPJtTM9gEB5gVJT4gHQ8s5Bb847mlcrPbtMFBRHILYI2XiMa3MZrH6hNhFVcREgKyTFkfQEC06b77BVd1S8d12Gb5Q-oDbGjDpSWiDGjq1Qpcl6uK63ETjOLglNxxNiF_uds4XNzsRnvhu3ptUexx25iizWJ3oQrWjLFD52OsahaPgw1Z57qKelTKaOY5bzHnWFih7KPUau0wTga6mfWpY68IQdOodyi29bYwsn-AKpw7Hf6E7cK1yUd7rGg7VU42v-UBvnOdrTrit5udfj4cpkCU87qegHiUZb3agcEKCng1TInaQ0Z2bHUFFv2zW1gCUtlHS3hBay06FOpYx0cueLjen-WcP5ilcIy6HBqYBIAwLoWqRblz5qkH-ASbl2jhxH06NX1ACeHLt9OvN-eLbIdEXssEKrBM0qxzTjkzbqBs9jmt660gPdyHw4eePM7wZsjxPMSQPIgmzVfhl4NhLdOQ-55bg4O99JRpcN4_lBbbfsmtnr8QITfq6oMIwfUlIUIDyEQGITXWGY5F0H8xXKO0u-XRPa3Kyan-vuyd2yaXj2FpTZt3GxhXfgXkP1-NBSzKQeXEGt_CHpLWI7aKrIw_3JKMJJpmRb9tHe1g1GafRQXhFqH2aZINfXX6emG9NKs1yzhESs5K518iV2WvUs2pgJHLROVxfd7N3xjGwkvWbUtJDlTA0aKskNf9c26ogOII7hcjVVJqjShEOBrNcBmW5KCc5sJIjVCrwJH-IOKzzYOZlV5FwnNRrYlMhhgjZNmZ9ArNe6UTtdicOcXOTKo9WUvUGhmeZ4PrZx9oBXFj_UApAHfn8R5_K0IPKoXBdLEz68sLrQBrwIdB5pYQgUk_gOjAvb83eU7SM1PVGHlKsx85KIFw8Z-K1sNJCL2Q5T2V0TQDNxTsx5O6vBIiBtsj9VVyKNsC5YkF9rYs0xXNFARQCtAtuavIGQ3tRvlPB6K7hotj1TsLYvevRwmfiN0sHyYVubBFrbajrranlmkoC6uHCn6pcW3T3g6irV_WmfiLzbEBORCKIIxWIeS02TUxbihgjcnPOgw8IJZ-CAUyCago6XJLjI5DkpqObij1eiDiUYQtpuTgMpvW6sGcA-XnhOGtiDe0HojYUmB50fES1rYXPrnGFOshfHKphi4GHkWHYuc5xjxS_WYplRcz4btacqg0-CaXqpzvyxQyRnkHCVf9ikHlz4B06vyq1a7hyTHrXE0MhZLRVmjfNWHdmuE8jRCAwrKSVl08NI71XKIodCH8rDWqo8RmBGUJ3ktNH2YurgXC-EV8APB3TbE33bo_SGlMfErb1sp8d7gJiGAyDRXdlHG46NBqtsOYVKcTS49lnbahkBMLdgQgzRh_N0CILzFpl-dvsaCXEcJZKrBkNEAKBYmgJBBGEAHlFpSCAgiKfwp7evozjCghCLARyDcQBFA_gq2igJYAiSwvBV5xCE-uz2g7ZLmjx-1fVtmlfJq6QO8upPt1-egipu78qqbfvv_M9IvPUQnz-5-cuTrzx_-t7tVx-9evSND8DbN8-fv3zv0dvs309uPn569SdfZ3_L_vDbj9Sf_PIXv3M__Nqjz57eV3jJVChjfihLyYcXVpBZrqYFWozsUVpbaaptQtyT5F4to29hb6AfP3v22bMviZyv8Y7t0BpHWxzsg39_9vQH7zz-9MX_h9353hfeff7o_Rcvfs-PP-r_84ftfwE1&amp;amp;mkt=en-US&amp;amp;hosted=0&amp;amp;device_platform=Windows&amp;#43;10&amp;amp;username=myemail@secret.com&lt;br/&gt;
+&lt;br/&gt;</description><pubDate>Tue, 25 Jun 2019 13:48:12 Z</pubDate><enclosure url="https://i1.social.s-msft.com/profile/u/avatar.jpg?displayname=%c4%b0brahim+uluda%c4%9f&amp;size=small" type="image/jpeg" length="1" /><a10:updated>2019-06-28T22:28:45Z</a10:updated></item><item><guid isPermaLink="true">https://social.msdn.microsoft.com/Forums/en-US/01080d33-1a6f-4f18-9003-af87c9f02240/hybrid-device-enrollment-user-join-for-one-drive?forum=WindowsAzureAD</guid><link>https://social.msdn.microsoft.com/Forums/en-US/01080d33-1a6f-4f18-9003-af87c9f02240/hybrid-device-enrollment-user-join-for-one-drive?forum=WindowsAzureAD</link><a10:author><a10:name>dhitchen</a10:name><a10:uri>https://social.msdn.microsoft.com:443/profile/dhitchen/?type=forum</a10:uri></a10:author><title>Hybrid Device Enrollment - User join for One drive </title><description>&lt;p&gt;I have been testing Hybrid Join and successfully managed to get some devices joining Azure using the MS documentation here&amp;nbsp;&lt;a href="https://docs.microsoft.com/en-us/azure/active-directory/devices/hybrid-azuread-join-control"&gt;https://docs.microsoft.com/en-us/azure/active-directory/devices/hybrid-azuread-join-control&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style="font-size:0.75em"&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style="font-size:0.75em"&gt;Running the following shows that there is an issue with User State and hence I cannot get onedrive silent sync working.&amp;nbsp;&lt;/span&gt;&amp;nbsp;The documentation point to issues but not with&amp;nbsp;&amp;nbsp;WamDefaultSet : ERROR&lt;br/&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;br/&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;span style="font-size:0.75em"&gt;Microsoft Windows [Version 10.0.17134.766]&lt;/span&gt;&lt;br/&gt;
+&lt;/p&gt;
+&lt;pre class="prettyprint"&gt;(c) 2018 Microsoft Corporation. All rights reserved.
+
+C:\WINDOWS\system32&amp;gt;dsregcmd /status
+
+&amp;#43;----------------------------------------------------------------------&amp;#43;
+| Device State                                                         |
+&amp;#43;----------------------------------------------------------------------&amp;#43;
+
+             AzureAdJoined : YES
+          EnterpriseJoined : NO
+                  DeviceId : 259e7197-16e8-49ad-a5bb-208b721c7a62
+                Thumbprint : A5BDC55F65822B880EB75E3430FF51810FC8213E
+            KeyContainerId : b534ae78-bd44-4b83-8c22-2e5f02a54d09
+               KeyProvider : Microsoft Software Key Storage Provider
+              TpmProtected : NO
+              KeySignTest: : PASSED
+                       Idp : login.windows.net
+                  TenantId : &amp;lt;tenantid&amp;gt;
+                TenantName :
+               AuthCodeUrl : https://login.microsoftonline.com/&amp;lt;tenantid&amp;gt;/oauth2/authorize
+            AccessTokenUrl : https://login.microsoftonline.com/&amp;lt;tenantid&amp;gt;/oauth2/token
+                    MdmUrl :
+                 MdmTouUrl :
+          MdmComplianceUrl :
+               SettingsUrl :
+            JoinSrvVersion : 1.0
+                JoinSrvUrl : https://enterpriseregistration.windows.net/EnrollmentServer/device/
+                 JoinSrvId : urn:ms-drs:enterpriseregistration.windows.net
+             KeySrvVersion : 1.0
+                 KeySrvUrl : https://enterpriseregistration.windows.net/EnrollmentServer/key/
+                  KeySrvId : urn:ms-drs:enterpriseregistration.windows.net
+        WebAuthNSrvVersion : 1.0
+            WebAuthNSrvUrl : https://enterpriseregistration.windows.net/webauthn/&amp;lt;tenantid&amp;gt;/
+             WebAuthNSrvId : urn:ms-drs:enterpriseregistration.windows.net
+DeviceManagementSrvVersion : 1.0
+    DeviceManagementSrvUrl : https://enterpriseregistration.windows.net/manage/&amp;lt;tenantid&amp;gt;/
+     DeviceManagementSrvId : urn:ms-drs:enterpriseregistration.windows.net
+              DomainJoined : YES
+                DomainName : &amp;lt;domainname&amp;gt;
+
+&amp;#43;----------------------------------------------------------------------&amp;#43;
+| User State                                                           |
+&amp;#43;----------------------------------------------------------------------&amp;#43;
+
+                    NgcSet : NO
+           WorkplaceJoined : NO
+             WamDefaultSet : ERROR
+                AzureAdPrt : NO
+       AzureAdPrtAuthority :
+             EnterprisePrt : NO
+    EnterprisePrtAuthority :
+
+&amp;#43;----------------------------------------------------------------------&amp;#43;
+| Ngc Prerequisite Check                                               |
+&amp;#43;----------------------------------------------------------------------&amp;#43;
+
+             IsUserAzureAD : NO
+             PolicyEnabled : NO
+          PostLogonEnabled : YES
+            DeviceEligible : YES
+        SessionIsNotRemote : YES
+            CertEnrollment : none
+         AadRecoveryNeeded : NO
+              PreReqResult : WillNotProvision&lt;/pre&gt;
+&lt;br/&gt;
+&lt;br/&gt;
+&lt;hr&gt;
+&lt;p&gt;darren hitchen&lt;/p&gt;</description><pubDate>Tue, 11 Jun 2019 13:36:00 Z</pubDate><enclosure url="https://i1.social.s-msft.com/profile/u/avatar.jpg?displayname=dhitchen&amp;size=small" type="image/jpeg" length="1" /><a10:updated>2019-06-28T18:44:26Z</a10:updated></item><item><guid isPermaLink="true">https://social.msdn.microsoft.com/Forums/en-US/3b6cfcbc-8406-47ff-8ac0-3c70c66d56a4/replicate-powershells-addmsolrolemember-using-microsoft-graph?forum=WindowsAzureAD</guid><link>https://social.msdn.microsoft.com/Forums/en-US/3b6cfcbc-8406-47ff-8ac0-3c70c66d56a4/replicate-powershells-addmsolrolemember-using-microsoft-graph?forum=WindowsAzureAD</link><a10:author><a10:name>Cheesebread</a10:name><a10:uri>https://social.msdn.microsoft.com:443/profile/cheesebread/?type=forum</a10:uri></a10:author><title>Replicate PowerShell's Add-MsolRoleMember using Microsoft Graph</title><description>&lt;p&gt;Good morning&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;I have been asked to take an existing powershell script and make direct Microsoft Graph Calls.&amp;nbsp; The command(s) is Add-MsolRoleMember (also Remove-MsolRoleMember).&amp;nbsp; The pattern powershell uses&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;Add-MsolRoleMember -RoleObjectId [GUID] -RoleMemberEmailAddress [EMAIL ADDRESS]&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;I am trying to build this using C# and the Microsoft Graph API.&amp;nbsp; I don't seem to see documentation for how to do this (or at least what to call it).&amp;nbsp; I see some directory roles examples but I didn't think that they were the same thing.&amp;nbsp; I
+ have seen it stated that Powershell is leveraging the Microsoft Graph API but I don't see it outside of the BETA version.&amp;nbsp; Any help would be appreciated.&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;Update.&lt;/p&gt;
+&lt;p&gt;I keep seeing references to having to use Azure Graph instead because Microsoft Graph still has functionality in Beta and not supported.&amp;nbsp; I can pull all role assignments using Azure Graph this way&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;$&amp;quot;https://graph.windows.net/{settings.TenantID.value}/users/[ID}/appRoleAssignments?api-version=1.6&amp;quot;;&lt;/p&gt;
+&lt;p&gt;I don't see how to add or remove from the list I get back.&amp;nbsp; They in fact look on the surface like applications to me.&amp;nbsp; I assume that these are different from directory roles so I cannot seem to find the correct call.&amp;nbsp; At this point if I could
+ add and remove roles using Azure Graph I would be pleased because I presume that is what the powershell command is doing.&amp;nbsp;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;Thank you&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;br/&gt;
+&lt;br/&gt;
+&lt;br/&gt;</description><pubDate>Tue, 11 Jun 2019 13:21:08 Z</pubDate><enclosure url="https://i1.social.s-msft.com/profile/u/avatar.jpg?displayname=cheesebread&amp;size=small" type="image/jpeg" length="1" /><a10:updated>2019-06-28T18:43:40Z</a10:updated></item><item><guid isPermaLink="true">https://social.msdn.microsoft.com/Forums/en-US/21b7c5cf-eaf4-4fbf-b67e-31b4e8e7be8f/need-to-create-a-custome-role-in-azure?forum=WindowsAzureAD</guid><link>https://social.msdn.microsoft.com/Forums/en-US/21b7c5cf-eaf4-4fbf-b67e-31b4e8e7be8f/need-to-create-a-custome-role-in-azure?forum=WindowsAzureAD</link><a10:author><a10:name>BizTalk1234</a10:name><a10:uri>https://social.msdn.microsoft.com:443/profile/biztalk1234/?type=forum</a10:uri></a10:author><title>Need to create a custome role in azure</title><description>&lt;p&gt;Hi All,&lt;/p&gt;
+&lt;p&gt;Can any one advise simplist way for creating the custome role meet below requirement.&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;Contriber access with firewall setting is disabled on all resourse types.&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;Thanks.&lt;/p&gt;</description><pubDate>Thu, 27 Jun 2019 20:06:39 Z</pubDate><enclosure url="https://i1.social.s-msft.com/profile/u/avatar.jpg?displayname=biztalk1234&amp;size=small" type="image/jpeg" length="1" /><a10:updated>2019-06-28T17:41:40Z</a10:updated></item><item><guid isPermaLink="true">https://social.msdn.microsoft.com/Forums/en-US/438f936c-3b8e-4fd3-b5dd-22d386eaf6e8/detailed-ldap-server-requirements?forum=windowsazureactiveauthentication</guid><link>https://social.msdn.microsoft.com/Forums/en-US/438f936c-3b8e-4fd3-b5dd-22d386eaf6e8/detailed-ldap-server-requirements?forum=windowsazureactiveauthentication</link><a10:author><a10:name>Vick Vega</a10:name><a10:uri>https://social.msdn.microsoft.com:443/profile/vick%20vega/?type=forum</a10:uri></a10:author><title>Detailed LDAP server requirements</title><description>&lt;p&gt;Hello,&lt;br/&gt;
+I'm looking for information in regards to the mandatory requirements for LDAP servers that MFA has to have.&lt;br/&gt;
+Anything among the lines of mandatory attributes, unique identifies, etc ... What must have configured on within LDAP to function properly?&lt;/p&gt;
+&lt;p&gt;Thank you.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;Memento Mori&lt;/p&gt;</description><pubDate>Tue, 11 Jun 2019 23:13:08 Z</pubDate><enclosure url="https://i1.social.s-msft.com/profile/u/avatar.jpg?displayname=vick+vega&amp;size=small" type="image/jpeg" length="1" /><a10:updated>2019-06-28T17:35:09Z</a10:updated></item></channel></rss>
